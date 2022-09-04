@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <link href="https://unpkg.com/nes.css/css/nes.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href={{url_for('static',filename='css/index.css' )}}>
+
+
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="nescss">
+        <header :class="{ sticky: scrollPos > 50 }">
+            <div class="container">
+                <div class="nav-brand">
+                    <h1>Sorteador de Duplas/Trios</h1>
+                </div>
+            </div>
+        </header>
+        <div class="container">
+            <main class='main-content'>
+                <section class="nes-container with-title showcase">
+                    <h2>#Turma</h2>
+                    <div class="item" id="inputs">
+                        <!-- <label for="turma">Turma:</label> -->
+                        <div class="nes-select">
+                            <select name="turma" id="select_turma">
+                                <option value="tp_2022">Técnicas de Programação 2022.2</option>
+                                <option value="pe_2022">Programação Estruturada 2022.2</option>
+                            </select>
+                        </div>
+                        <button id="btn_select_turma" class="nes-btn is-primary">Selecionar</button>
+                    </div>
+
+                    <div class="nes-table-responsive">
+                        <table class="nes-table is-bordered is-centered">
+                            <thead>
+                                <tr>
+                                    <th>Nome</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabela">
+
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+                <section class="nes-container with-title showcase">
+                    <h2>#Duplas</h2>
+                    <div>
+                        <button id="btn_sortear" class="nes-btn is-success">Sortear Duplas</button>
+                    </div>
+
+                    <div class="nes-table-responsive" style="margin-top:1rem;">
+                        <table class="nes-table is-bordered is-centered">
+                            <thead>
+                                <tr>
+                                    <th>Aluno 1</th>
+                                    <th>Aluno 2</th>
+                                    <th>Aluno 3</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tabela_duplas">
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+            </main>
+            <footer>
+                <p>
+                    <span><span style="display:inline-block; transform: rotate(180deg);">&copy;</span>2022 Patric Lacouth</span>
+                    <span>-</span>
+                    <span>Made with
+                        <i class="nes-icon is-small heart"></i>
+                        <span>and</span>
+                        <a href="https://palletsprojects.com/p/flask/" target="_blank" rel="noopener">Flask</a>
+                    </span>
+                </p>
+            </footer>
+        </div>
+    </div>
+
+
+    <script src={{url_for('static', filename='js/index.js' )}}></script>
+</body>
+
+</html>
